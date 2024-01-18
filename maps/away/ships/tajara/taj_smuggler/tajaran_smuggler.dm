@@ -7,6 +7,7 @@
 	ship_cost = 1
 	id = "tajaran_smuggler"
 	shuttles_to_initialise = list(/datum/shuttle/autodock/overmap/tajaran_smuggler_shuttle, /datum/shuttle/autodock/overmap/tajaran_smuggler_cargo)
+	template_flags = TEMPLATE_FLAG_SPAWN_GUARANTEED
 
 	unit_test_groups = list(3)
 
@@ -25,7 +26,7 @@
 	colors = list("#c3c7eb", "#a0a8ec")
 	scanimage = "tramp_freighter.png"
 	designer = "Independent/no designation"
-	volume = "55 meters length, 25 meters beam/width, 18 meters vertical height"
+	volume = "75 meters length, 25 meters beam/width, 18 meters vertical height"
 	drive = "Low-Speed Warp Acceleration FTL Drive"
 	weapons = "Not apparent, port obscured flight craft bay"
 	sizeclass = "Zhsram Freighter"
@@ -48,7 +49,7 @@
 	invisible_until_ghostrole_spawn = TRUE
 
 /obj/effect/overmap/visitable/ship/tajaran_smuggler/New()
-	designation = "[pick("Brave Ha'rron", "Trickster Farwa", "Legal and Safe Cargo", "Adhomian Trader", "Minharrzka", "Rredouane's Chosen", "Adhomai's Pride")]"
+	designation = "[pick("Brave Ha'rron", "Trickster Farwa", "Legal and Safe Cargo", "Adhomian Trader", "Minharrzka's Chosen", "Rredouane's Chosen", "Adhomai's Pride")]"
 	..()
 
 /obj/effect/shuttle_landmark/tajaran_smuggler/nav1
