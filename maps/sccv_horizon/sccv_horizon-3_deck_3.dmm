@@ -4970,10 +4970,6 @@
 	pixel_x = 7;
 	pixel_y = 8
 	},
-/obj/item/device/healthanalyzer{
-	pixel_x = -2;
-	pixel_y = 3
-	},
 /obj/item/storage/box/gloves{
 	pixel_x = 7;
 	pixel_y = 1
@@ -16553,10 +16549,6 @@
 /obj/item/roller{
 	pixel_x = -1;
 	pixel_y = 14
-	},
-/obj/item/device/healthanalyzer{
-	pixel_x = -3;
-	pixel_y = 2
 	},
 /turf/simulated/floor/tiled/white,
 /area/horizon/security/autopsy_laboratory)
