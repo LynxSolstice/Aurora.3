@@ -2997,10 +2997,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/table/steel,
-/obj/item/device/healthanalyzer{
-	pixel_y = 4
-	},
-/obj/item/device/healthanalyzer,
 /obj/item/device/analyzer/plant_analyzer{
 	pixel_y = -4
 	},
@@ -12796,7 +12792,6 @@
 /area/storage/eva)
 "iTx" = (
 /obj/structure/table/reinforced,
-/obj/item/device/healthanalyzer,
 /obj/effect/floor_decal/corner_wide/purple{
 	dir = 9
 	},

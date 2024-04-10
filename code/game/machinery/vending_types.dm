@@ -632,7 +632,6 @@
 		/obj/item/reagent_containers/glass/bottle/coagzolug = 2,
 		/obj/item/reagent_containers/glass/bottle/thetamycin = 2,
 		/obj/item/reagent_containers/syringe = 12,
-		/obj/item/device/healthanalyzer = 5,
 		/obj/item/device/breath_analyzer = 2,
 		/obj/item/reagent_containers/glass/beaker = 4,
 		/obj/item/reagent_containers/dropper = 2,
@@ -707,7 +706,6 @@
 		/obj/item/storage/box/fancy/med_pouch/burn = 1,
 		/obj/item/storage/box/fancy/med_pouch/oxyloss = 1,
 		/obj/item/storage/box/fancy/med_pouch/toxin = 1,
-		/obj/item/device/healthanalyzer = 1,
 		/obj/item/device/breath_analyzer  = 1
 	)
 	contraband = list(
@@ -740,7 +738,6 @@
 		/obj/item/storage/box/fancy/med_pouch/oxyloss = 1,
 		/obj/item/storage/box/fancy/med_pouch/toxin = 1,
 		/obj/item/storage/box/fancy/med_pouch/radiation = 1,
-		/obj/item/device/healthanalyzer = 1,
 		/obj/item/device/breath_analyzer = 1
 	)
 	contraband = list(
@@ -1304,7 +1301,6 @@
 		/obj/item/cell/high = 12,
 		/obj/item/device/assembly/prox_sensor = 3,
 		/obj/item/device/assembly/signaler = 3,
-		/obj/item/device/healthanalyzer = 3,
 		/obj/item/surgery/scalpel = 2,
 		/obj/item/surgery/circular_saw = 2,
 		/obj/item/screwdriver = 5,

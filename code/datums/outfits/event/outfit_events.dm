@@ -82,7 +82,6 @@
 	accessory = /obj/item/clothing/accessory/holster/thigh
 	accessory_contents = list(/obj/item/gun/energy/pulse/pistol = 1)
 	belt_contents = list(
-			/obj/item/device/healthanalyzer = 1,
 			/obj/item/reagent_containers/hypospray/combat = 1,
 			/obj/item/reagent_containers/syringe = 1,
 			/obj/item/personal_inhaler/combat = 1,

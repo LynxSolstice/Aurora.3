@@ -16567,7 +16567,6 @@
 /area/medical/patient_d)
 "aIz" = (
 /obj/structure/table/reinforced,
-/obj/item/device/healthanalyzer,
 /obj/effect/floor_decal/corner_wide/mauve{
 	dir = 9
 	},

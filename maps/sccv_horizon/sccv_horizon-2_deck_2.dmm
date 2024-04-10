@@ -7132,12 +7132,6 @@
 /obj/item/storage/firstaid/empty{
 	pixel_x = 7
 	},
-/obj/item/device/healthanalyzer{
-	pixel_x = 8
-	},
-/obj/item/device/healthanalyzer{
-	pixel_x = 8
-	},
 /obj/item/device/assembly/prox_sensor{
 	pixel_x = 8
 	},

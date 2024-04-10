@@ -3221,7 +3221,6 @@
 	departmentType = 5
 	},
 /obj/item/storage/box/bodybags,
-/obj/item/device/healthanalyzer,
 /turf/simulated/floor/tiled{
 	name = "cooled floor";
 	temperature = 278
@@ -31076,7 +31075,6 @@
 	layer = 2.9
 	},
 /obj/item/device/analyzer/plant_analyzer,
-/obj/item/device/healthanalyzer,
 /obj/item/device/analyzer,
 /obj/item/device/analyzer,
 /turf/simulated/floor/plating,
@@ -57684,8 +57682,6 @@
 /obj/structure/table/steel,
 /obj/item/storage/firstaid/empty,
 /obj/item/storage/firstaid/empty,
-/obj/item/device/healthanalyzer,
-/obj/item/device/healthanalyzer,
 /obj/machinery/firealarm/south,
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = 16;
