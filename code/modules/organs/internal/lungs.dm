@@ -286,11 +286,14 @@
 	return failed_breath
 
 /obj/item/organ/internal/lungs/proc/handle_temperature_effects(datum/gas_mixture/breath)
+	var/breath_effect_prob = 0
 	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && NOT_FLAG(owner.mutations, COLD_RESISTANCE))
 
 		if(breath.temperature <= owner.species.cold_level_1)
 			if(prob(20))
 				to_chat(owner, "<span class='danger'>You feel your face freezing and icicles forming in your lungs!</span>")
+			if(prob(breath_effect_prob))
+				emit_breath_particle(owner, /particles/fog/breath)
 		else if(breath.temperature >= owner.species.heat_level_1)
 			if(prob(20))
 				to_chat(owner, "<span class='danger'>You feel your face burning and a searing heat in your lungs!</span>")
@@ -307,12 +310,15 @@
 				owner.fire_alert = max(owner.fire_alert, 2)
 
 		else if(breath.temperature <= owner.species.cold_level_1)
+			breath_effect_prob = 25
 			if(breath.temperature > species.cold_level_2)
 				owner.apply_damage(COLD_GAS_DAMAGE_LEVEL_1, DAMAGE_BURN, BP_HEAD, used_weapon = "Excessive Cold")
 				owner.fire_alert = max(owner.fire_alert, 1)
+				breath_effect_prob = 50
 			else if(breath.temperature > species.cold_level_3)
 				owner.apply_damage(COLD_GAS_DAMAGE_LEVEL_2, DAMAGE_BURN, BP_HEAD, used_weapon = "Excessive Cold")
 				owner.fire_alert = max(owner.fire_alert, 1)
+				breath_effect_prob = 100
 			else
 				owner.apply_damage(COLD_GAS_DAMAGE_LEVEL_3, DAMAGE_BURN, BP_HEAD, used_weapon = "Excessive Cold")
 				owner.fire_alert = max(owner.fire_alert, 1)
@@ -375,3 +381,37 @@
 	rescued = FALSE
 
 #undef HUMAN_MAX_OXYLOSS
+/obj/item/organ/internal/lungs/proc/emit_breath_particle(mob/living/carbon/human/owner, particle_type)
+	ASSERT(ispath(particle_type, /particles))
+
+	var/obj/effect/abstract/particle_holder/holder = new(owner, particle_type)
+	var/particles/breath_particle = holder.particles
+	var/breath_dir = owner.dir
+
+	var/list/particle_grav = list(0, 0.1, 0)
+	var/list/particle_pos = list(0, 2, 0)
+	if(breath_dir & NORTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Layer it behind the mob since we're facing away from the camera
+		holder.pixel_w -= 4
+		holder.pixel_y += 4
+	if(breath_dir & WEST)
+		particle_grav[1] = -0.2
+		particle_pos[1] = -5
+		breath_particle.rotation = -45
+	if(breath_dir & EAST)
+		particle_grav[1] = 0.2
+		particle_pos[1] = 5
+		breath_particle.rotation = 45
+	if(breath_dir & SOUTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Shouldn't be necessary but just for parity
+		holder.pixel_w += 4
+		holder.pixel_y -= 4
+
+	breath_particle.gravity = particle_grav
+	breath_particle.position = particle_pos
+
+	QDEL_IN(holder, breath_particle.lifespan)
