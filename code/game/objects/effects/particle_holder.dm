@@ -5,7 +5,7 @@
 	desc = "How are you reading this? Please make a bug report :)"
 	appearance_flags = KEEP_APART|KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE|LONG_GLIDE //movable appearance_flags plus KEEP_APART and KEEP_TOGETHER
 	vis_flags = VIS_INHERIT_PLANE
-	layer = ABOVE_ALL_MOB_LAYER
+	layer = ABOVE_HUMAN_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	anchored = TRUE
 	/// Holds info about how this particle emitter works

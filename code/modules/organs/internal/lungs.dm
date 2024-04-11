@@ -287,7 +287,7 @@
 
 /obj/item/organ/internal/lungs/proc/handle_temperature_effects(datum/gas_mixture/breath)
 	var/breath_effect_prob = 0
-	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && NOT_FLAG(owner.mutations, COLD_RESISTANCE))
+	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && !(owner.mutations & COLD_RESISTANCE))
 
 		if(breath.temperature <= owner.species.cold_level_1)
 			if(prob(20))
