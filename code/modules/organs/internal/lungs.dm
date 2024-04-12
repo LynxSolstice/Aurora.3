@@ -290,7 +290,7 @@
 	if((breath.temperature < species.cold_level_1 || breath.temperature > species.heat_level_1) && !(owner.mutations & COLD_RESISTANCE))
 
 		if(breath.temperature <= owner.species.cold_level_1)
-			if(prob(20))
+			if(prob(sqrt(breath_effect_prob) * 4))
 				to_chat(owner, "<span class='danger'>You feel your face freezing and icicles forming in your lungs!</span>")
 			if(prob(breath_effect_prob))
 				emit_breath_particle(owner, /particles/fog/breath)
@@ -322,6 +322,7 @@
 			else
 				owner.apply_damage(COLD_GAS_DAMAGE_LEVEL_3, DAMAGE_BURN, BP_HEAD, used_weapon = "Excessive Cold")
 				owner.fire_alert = max(owner.fire_alert, 1)
+				breath_effect_prob = 100
 
 		//breathing in hot/cold air also heats/cools you a bit
 		var/temp_adj = breath.temperature - owner.bodytemperature
